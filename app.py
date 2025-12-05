@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from datetime import *
 import requests
 
@@ -69,7 +68,7 @@ if st.button("Get Fare Estimate"):
         if response.status_code == 200:
             prediction = response.json().get("fare")
             st.success(f'The estimated fare is: ${prediction:.2f}')
-            st.snow()
+            st.balloons()
         else:
             st.error("Error: Unable to retrieve the fare. Please check your inputs.")
     else:
