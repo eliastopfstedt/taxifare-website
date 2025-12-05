@@ -6,7 +6,7 @@ import requests
 '''
 # TaxiFare AI
 
-## *Predict taxi fares for NYC the easy way*
+## *Predict taxifares easily for NYC*
 '''
 
 # Inputs
@@ -20,6 +20,7 @@ dropoff_longitude = st.number_input('Insert dropoff longitude',format="%0.3f", s
 
 passenger_count = st.number_input("Passenger Count", min_value=1, max_value=10, value=1)
 
+# map
 def get_map_data(
     pickup_latitude=40.779,
     pickup_longitude=-73.963,
@@ -43,10 +44,10 @@ df = get_map_data(
 
 st.map(df, latitude='lat', longitude='lon', color='color')
 st.markdown("""
-🔵 Pickup Location
-🔴 Dropoff Location
+🔵 Pickup Location        🔴 Dropoff Location
 ######
 """)
+
 
 url = 'https://taxifare.lewagon.ai/predict'
 
@@ -68,8 +69,10 @@ if st.button("Get Fare Estimate"):
         if response.status_code == 200:
             prediction = response.json().get("fare")
             st.success(f'The estimated fare is: ${prediction:.2f}')
-            st.snow()
         else:
             st.error("Error: Unable to retrieve the fare. Please check your inputs.")
     else:
         st.warning("Please enter valid pickup and dropoff locations.")
+
+if st.button("Let it snow"):
+    st.snow()
