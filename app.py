@@ -15,7 +15,7 @@ ride_time = st.time_input("Time of the ride", value=datetime.now().time())
 
 pickup_latitude = st.number_input('Insert pickup latitude',format="%0.3f", step=0.001, value=40.779)
 pickup_longitude = st.number_input('Insert pickup longitude',format="%0.3f", step=0.001, value=-73.963)
-dropoff_latitude = st.number_input('Insert dropoff latitude',format="%0.3f", step=0.001, value=40.706)
+dropoff_latitude = st.number_input('Insert dropoff latitude',format="%0.3f", step=0.001, value=40.725)
 dropoff_longitude = st.number_input('Insert dropoff longitude',format="%0.3f", step=0.001, value=-73.996)
 
 passenger_count = st.number_input("Passenger Count", min_value=1, max_value=10, value=1)
@@ -23,8 +23,8 @@ passenger_count = st.number_input("Passenger Count", min_value=1, max_value=10, 
 def get_map_data(
     pickup_latitude=40.779,
     pickup_longitude=-73.963,
-    dropoff_longitude=40.706,
-    dropoff_latitude=-73.996):
+    dropoff_latitude=40.725,
+    dropoff_longitude=-73.996):
     # Metropolitan Museum of Art (pickup) and JFK Airport (dropoff)
     return pd.DataFrame(
         [
