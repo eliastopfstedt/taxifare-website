@@ -13,10 +13,10 @@ import requests
 ride_date = st.date_input("Date of the ride", value=datetime.today())
 ride_time = st.time_input("Time of the ride", value=datetime.now().time())
 
-pickup_latitude = st.number_input('Insert pickup latitude',format="%0.4f", step=0.001, value=40.779)
-pickup_longitude = st.number_input('Insert pickup longitude',format="%0.4f", step=0.001, value=-73.963)
-dropoff_latitude = st.number_input('Insert dropoff latitude',format="%0.4f", step=0.001, value=40.706)
-dropoff_longitude = st.number_input('Insert dropoff longitude',format="%0.4f", step=0.001, value=-73.996)
+pickup_latitude = st.number_input('Insert pickup latitude',format="%0.3f", step=0.001, value=40.779)
+pickup_longitude = st.number_input('Insert pickup longitude',format="%0.3f", step=0.001, value=-73.963)
+dropoff_latitude = st.number_input('Insert dropoff latitude',format="%0.3f", step=0.001, value=40.706)
+dropoff_longitude = st.number_input('Insert dropoff longitude',format="%0.3f", step=0.001, value=-73.996)
 
 passenger_count = st.number_input("Passenger Count", min_value=1, max_value=10, value=1)
 
@@ -68,7 +68,7 @@ if st.button("Get Fare Estimate"):
         if response.status_code == 200:
             prediction = response.json().get("fare")
             st.success(f'The estimated fare is: ${prediction:.2f}')
-            st.balloons()
+            st.snow()
         else:
             st.error("Error: Unable to retrieve the fare. Please check your inputs.")
     else:
