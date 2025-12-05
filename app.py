@@ -6,7 +6,7 @@ import requests
 '''
 # TaxiFare AI
 
-## *Predict taxifares easily for NYC*
+## *Predict taxi fares for NYC the easy way*
 '''
 
 # Inputs
