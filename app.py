@@ -6,7 +6,8 @@ import requests
 '''
 # TaxiFare AI
 
-## *Predict taxifares easily for NYC*
+## *Predict taxifares for NYC the easy way*
+######
 '''
 
 # Inputs
@@ -19,7 +20,7 @@ dropoff_latitude = st.number_input('Insert dropoff latitude',format="%0.3f", ste
 dropoff_longitude = st.number_input('Insert dropoff longitude',format="%0.3f", step=0.001, value=-73.996)
 
 passenger_count = st.number_input("Passenger Count", min_value=1, max_value=10, value=1)
-
+st.markdown("""######""")
 # map
 def get_map_data(
     pickup_latitude=40.779,
